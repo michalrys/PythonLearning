@@ -1,6 +1,6 @@
 # 2018-06-04
 # Michal Rys
-# DAY 03: task01
+# DAY 03: task02
 
 # 1 - podaj imie użytkownika (input)
 # 2.0 - jeśli imie podane przez użytkownika == Piotr ?
@@ -11,10 +11,8 @@ ADMIN_USERNAME = 'Piotr'
 input_user_name = input('Podaj imie: ')
 
 # obróbka danych wejściowych
-# bo jak ktos wpisze PIOTR
-user_name = input_user_name.lower()
-# a teraz daje pierwsza dużą
-user_name = user_name.capitalize()
+# patrz do method / function chaining
+user_name = input_user_name.lower().capitalize()
 
 #               było tutaj 'Piotr' --> RMB --> Refactor -> Exctract -> Constant
 if user_name == ADMIN_USERNAME:
@@ -22,6 +20,4 @@ if user_name == ADMIN_USERNAME:
     print(f'Witaj {user_name}')
 else:
     print('Hej, poklikasz... ?')
-
-# dobra praktyka:  COMMIT EARLY, COMMIT OFTEN
-# @TODO: some comment
+# test
