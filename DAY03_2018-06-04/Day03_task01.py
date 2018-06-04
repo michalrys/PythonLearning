@@ -24,4 +24,4 @@ else:
     print('Hej, poklikasz... ?')
 
 # dobra praktyka:  COMMIT EARLY, COMMIT OFTEN
-# @TODO: some comment
+# @TODO: some commentm
