@@ -61,7 +61,7 @@ while error_code != 0:
     question_iteration += 1
 
 # name check
-if user_name_input == USER_NAME_SPECIAL:
+if user_name == USER_NAME_SPECIAL:
     print(f'Witaj adminie {user_name}! Podałeś prawidłowe imię. Jesteś w trybie'
           f' boss-mode')
 else:
