@@ -42,7 +42,7 @@
 
 # list of constance
 PYRAMID_BRICK_MARK = '#'
-PYRAMID_EMPTY_SPACE = ' '
+PYRAMID_EMPTY_SPACE_MARK = ' '
 
 # input data from user
 pyramid_high_user_input = input('Wysokość piramidy wynosi: ')
@@ -61,24 +61,26 @@ pyramid_offset_from_top = 3
 pyramid_offset_from_bottom = 3
 
 # print offset from top
-print(PYRAMID_EMPTY_SPACE, sep='', end=pyramid_offset_from_top * '\n')
+print(PYRAMID_EMPTY_SPACE_MARK, sep='', end=pyramid_offset_from_top * '\n')
 
 # pyramid print out
 for pyramid_level_from_top in range(1, pyramid_high + 1):
-    pyramid_space_from_left_margin = pyramid_high - pyramid_level_from_top
-    pyramid_amount_of_marks_stairs_left = pyramid_high - pyramid_space_from_left_margin
-    pyramid_amount_of_marks_stairs_right = pyramid_amount_of_marks_stairs_left - 1
-    pyramid_space_to_right_margin = pyramid_space_from_left_margin
+    pyramid_spaces_from_left_margin = pyramid_high - pyramid_level_from_top
+    pyramid_bricks_stairs_left = pyramid_high - pyramid_spaces_from_left_margin
+    pyramid_bricks_stairs_right = pyramid_bricks_stairs_left - 1
+    pyramid_spaces_to_right_margin = pyramid_spaces_from_left_margin
 
-    # print chars
-    print(pyramid_offset_from_left * PYRAMID_EMPTY_SPACE, sep='', end='')
-    print(pyramid_space_from_left_margin * PYRAMID_EMPTY_SPACE, sep='', end='')
-    print(pyramid_amount_of_marks_stairs_left * PYRAMID_BRICK_MARK, sep='', end='')
-    print(pyramid_amount_of_marks_stairs_right * PYRAMID_BRICK_MARK, sep='', end='')
-    print(pyramid_space_to_right_margin * PYRAMID_EMPTY_SPACE, sep='', end='\n')
+    # print offset from left
+    print(pyramid_offset_from_left * PYRAMID_EMPTY_SPACE_MARK, sep='', end='')
+
+    # print pyramid
+    print(pyramid_spaces_from_left_margin * PYRAMID_EMPTY_SPACE_MARK, sep='', end='')
+    print(pyramid_bricks_stairs_left * PYRAMID_BRICK_MARK, sep='', end='')
+    print(pyramid_bricks_stairs_right * PYRAMID_BRICK_MARK, sep='', end='')
+    print(pyramid_spaces_to_right_margin * PYRAMID_EMPTY_SPACE_MARK, sep='', end='\n')
 
 # print offset from bottom
-print(PYRAMID_EMPTY_SPACE, sep='', end= pyramid_offset_from_bottom * '\n')
+print(PYRAMID_EMPTY_SPACE_MARK, sep='', end= pyramid_offset_from_bottom * '\n')
 
 # TODO: base on that, Christmass tree could be build
 # TODO: change it to function --> input args: offesets, size,
