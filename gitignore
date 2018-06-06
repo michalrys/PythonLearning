@@ -1,5 +1,6 @@
 # my directories
 LEAR_AT_HOME/
+LEAR_AT_HOME/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
