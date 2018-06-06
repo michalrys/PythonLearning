@@ -1,6 +1,6 @@
 # 2018-06-06
 # Michal Rys
-# DAY 04: task07: z tablicy
+# DAY 04: task05 podejście 2
 
 text = 'Abracadabra'
 

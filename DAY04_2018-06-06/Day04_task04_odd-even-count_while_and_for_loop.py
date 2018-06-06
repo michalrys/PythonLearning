@@ -1,6 +1,6 @@
 # 2018-06-06
 # Michal Rys
-# DAY 04: task05:
+# DAY 04: task04. policzenie liczb parzystych / nieparzystych
 
 # TODO: pobierz od uzytkownika liczbe, ktora bedzie gorna granica zakresu
 # TODO: dolny zakres 0

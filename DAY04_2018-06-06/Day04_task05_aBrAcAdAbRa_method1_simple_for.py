@@ -1,6 +1,6 @@
 # 2018-06-06
 # Michal Rys
-# DAY 04: task06:
+# DAY 04: task05 podejście 1
 
 # TODO: zamien co drugi znak na wielka litere
 # TODO: kazdy string ma metode upper(), metoda replace(), count()

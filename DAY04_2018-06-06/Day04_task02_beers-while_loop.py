@@ -1,6 +1,6 @@
 # 2018-06-06
 # Michal Rys
-# DAY 04: task03: 99 beers - w petli while
+# DAY 04: task02: 99 beers - w petli while
 
 # TODO: na ekranie ma sie wyswietlac odliczanie
 # TODO: od 99 do 0
