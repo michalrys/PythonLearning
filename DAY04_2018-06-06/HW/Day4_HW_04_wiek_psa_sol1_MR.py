@@ -8,11 +8,15 @@
 # np. 15 ludzkich lat to 73 psie lata
 # ------------------------------------------------------------------------------
 
-# constants
-DOG_AGE_CRISIS = 2.0
-DOG_AGE_BEFORE_CRISIS_MULTI = 10.5
-DOG_AGE_AFTER_CRISIS_MULTI = 4.0
-DOG_AGE_LIMIT = 40.0
+# constants legend:
+#       DOG_AGE : age of user's dog
+# _DESCRIPTION_ : characteristic point in dog life
+#           _DY : biological age in years valid for human
+#           _HY : biological age in years valid for dog
+DOG_AGE_CRISIS_DY = 2.0
+DOG_AGE_BEFORE_CRISIS_MULTI_HY = 10.5
+DOG_AGE_AFTER_CRISIS_MULTI_HY = 4.0
+DOG_AGE_LIMIT_DY = 40.0
 
 # user input data
 dog_age_in_human_years = float(input('Od ilu lat masz psa? >> '))
@@ -21,24 +25,24 @@ dog_age_in_human_years = float(input('Od ilu lat masz psa? >> '))
 
 # age in dogs years
 
-if dog_age_in_human_years > 0 and dog_age_in_human_years <= DOG_AGE_CRISIS:
+if dog_age_in_human_years > 0 and dog_age_in_human_years <= DOG_AGE_CRISIS_DY:
     # dog age before crisis
     dog_age_in_dog_years = \
-        dog_age_in_human_years * DOG_AGE_BEFORE_CRISIS_MULTI
+        dog_age_in_human_years * DOG_AGE_BEFORE_CRISIS_MULTI_HY
 
-elif dog_age_in_human_years > DOG_AGE_CRISIS:
+elif dog_age_in_human_years > DOG_AGE_CRISIS_DY:
     # dog age after crisis = age part1 + age part2
     # dog age = age part1
     dog_age_in_dog_years = \
-        DOG_AGE_CRISIS * DOG_AGE_BEFORE_CRISIS_MULTI
+        DOG_AGE_CRISIS_DY * DOG_AGE_BEFORE_CRISIS_MULTI_HY
 
     # age part2: years after dog crisis
     dog_age_in_human_years_after_crisis = \
-        dog_age_in_human_years - DOG_AGE_CRISIS
+        dog_age_in_human_years - DOG_AGE_CRISIS_DY
 
     # dog age = sum (years before and after crisis)
     dog_age_in_dog_years += \
-        dog_age_in_human_years_after_crisis * DOG_AGE_AFTER_CRISIS_MULTI
+        dog_age_in_human_years_after_crisis * DOG_AGE_AFTER_CRISIS_MULTI_HY
 else:
     print('Wrong input data.')
 
@@ -46,6 +50,6 @@ else:
 print(f'\nMasz psa od {dog_age_in_human_years:.1f} lat.')
 print(f'Twój pies jest w wieku {dog_age_in_dog_years:.1f} lat.')
 
-if dog_age_in_dog_years > DOG_AGE_LIMIT:
+if dog_age_in_dog_years > DOG_AGE_LIMIT_DY:
     print(f'Zacznij szukać nowego psa :-(')
 
