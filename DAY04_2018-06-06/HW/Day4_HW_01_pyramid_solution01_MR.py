@@ -40,7 +40,7 @@
 # - in row i: (i-1)empty space + (i)brick LEFT + (i-1)brick RIGHT + (i-1)empty space
 #
 
-# list of constance
+# list of constants
 PYRAMID_BRICK_MARK = '#'
 PYRAMID_EMPTY_SPACE_MARK = ' '
 
