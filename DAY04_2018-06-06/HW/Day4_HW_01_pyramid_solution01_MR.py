@@ -58,10 +58,11 @@ pyramid_offset_from_left = 5
 pyramid_offset_from_top = 3
 
 # offset from bottom
-pyramid_offset_from_bottom = 3
+pyramid_offset_from_bottom = 2
 
-# print offset from top
-print(PYRAMID_EMPTY_SPACE_MARK, sep='', end=pyramid_offset_from_top * '\n')
+# print offset from top - correction
+if pyramid_offset_from_top > 0:
+    print(PYRAMID_EMPTY_SPACE_MARK, sep='', end=pyramid_offset_from_top * '\n')
 
 # pyramid print out
 for pyramid_level_from_top in range(1, pyramid_high + 1):

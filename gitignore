@@ -1,6 +1,8 @@
 # my directories
 LEAR_AT_HOME/
 LEAR_AT_HOME/*
+PRACTICEPYTHON.ORG/
+PRACTICEPYTHON.ORG/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
