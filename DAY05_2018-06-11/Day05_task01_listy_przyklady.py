@@ -50,3 +50,32 @@ for name in names:
 print('')
 for idx, name in enumerate(names):
     print(idx, name, sep=': ', end=' ')
+
+# --------------
+# dorzucenie imion z listy 2 do listy 1
+additional_names = ['piotrek', 'kasia']
+
+# doklei wszystkie elementy z listy2 do listy1
+print(names)
+names.extend(additional_names)
+print(names)
+
+# wykorzystanie operatorów matematycznych
+additional_names2 = ['Janusz', 'Grazyna']
+my_list = names + additional_names2  # jak extend
+print(my_list)
+
+# usuwanie z listy
+name_to_remove = 'ania'
+my_list.remove(name_to_remove)
+print('after removal', my_list)
+
+removed_item = my_list.pop()
+print(removed_item)
+
+# usuwanie
+del my_list[2]
+
+a = [1, 2, 3, 4, 5, 6]
+a[0:1] = [] # zawsze musi być zakres, bo inaszej
+a[0] = [] # przypisze puste
