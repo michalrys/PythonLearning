@@ -11,7 +11,7 @@ MESSAGE_LIST_EXTR_REVIEW = '{extremum_type} liczba z listy to element o id: ' \
                            '{element_id} o wartości: {element_value}.'
 
 # input user list
-list_user = [3, 4, 6, 9, 44, 9, -3, 49]
+list_user = [3, 4, 1, -3, 6, 9, 44, 9, -3, 49]
 
 # TODO: function to create user list
 # TODO: validate if elements are int, float, numbers
@@ -48,3 +48,27 @@ print(MESSAGE_LIST_EXTR_REVIEW.format(extremum_type='Najmniejsza',
                                       element_value=list_user_element_min))
 
 # TODO: rebuild for functions: create_list, find_extremum,
+
+# ------------------------------------------------------------------------------
+# method #2: use built-in funciotns
+print('--------------- built-in methods --------------------------------------')
+
+list_user_element_max = max(list_user)
+list_user_element_max_id = list_user.index(list_user_element_max)
+
+list_user_element_min = min(list_user)
+list_user_element_min_id = list_user.index(list_user_element_min)
+
+
+# print out results
+print(MESSAGE_LIST_REVIEW.format(list_to_print=list_user))
+print(MESSAGE_LIST_EXTR_REVIEW.format(extremum_type='Największa',
+                                      element_id=list_user_element_max_id,
+                                      element_value=list_user_element_max))
+
+print(MESSAGE_LIST_EXTR_REVIEW.format(extremum_type='Najmniejsza',
+                                      element_id=list_user_element_min_id,
+                                      element_value=list_user_element_min))
+
+# ------------------------------------------------------------------------------
+# method #3: TODO: use built-in funciotns - find all min / max values
