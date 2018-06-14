@@ -1,11 +1,10 @@
 # 2018-06-11
 # InfoShare: day 06.
-# task03 - import
+# task03 - importy
 
-# pliki pythona tez są funkcją
+# importujemy z my_function
 
-# DAY05_2018-06-11/Day05_task02_nested_list
-# functions/day06_my_functions
+import my_functions.day06_my_functions
+# from .my_functions import *
 
-import functions/day06_my_functions
-
+day06_my_functions.fun1()
