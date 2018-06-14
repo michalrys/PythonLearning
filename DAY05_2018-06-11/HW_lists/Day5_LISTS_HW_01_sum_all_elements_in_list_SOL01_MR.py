@@ -40,7 +40,15 @@ print(MESSAGE_SUM_1.format(sum_of_el = list_sum_of_all_elements))
 
 # ------------------------------------------------------------------------------
 # TODO: method #3 built-in functions/methods
-# TODO: poszukać, na razie nie znalazłem !!
+# TODO: --> import math
+import math
+list_sum_of_all_elements = math.fsum(list_user)
+
+# change to integer
+list_sum_of_all_elements = int(list_sum_of_all_elements)
+
+print(f'[Metoda 3 = funkcje wbudowane]: ', sep='', end='')
+print(MESSAGE_SUM_1.format(sum_of_el = list_sum_of_all_elements))
 
 # ------------------------------------------------------------------------------
 # method #4 function
