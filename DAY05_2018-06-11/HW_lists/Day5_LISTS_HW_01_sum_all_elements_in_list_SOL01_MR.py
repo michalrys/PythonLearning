@@ -44,10 +44,16 @@ print(MESSAGE_SUM_1.format(sum_of_el = list_sum_of_all_elements))
 import math
 list_sum_of_all_elements = math.fsum(list_user)
 
+list_sum_of_all_elements2 = sum(list_user)
+
+
 # change to integer
 list_sum_of_all_elements = int(list_sum_of_all_elements)
 
-print(f'[Metoda 3 = funkcje wbudowane]: ', sep='', end='')
+print(f'[Metoda 3 = funkcje wbudowane]: (math.fsum) ', sep='', end='')
+print(MESSAGE_SUM_1.format(sum_of_el = list_sum_of_all_elements))
+
+print(f'[Metoda 3 = funkcje wbudowane]: (sum) ', sep='', end='')
 print(MESSAGE_SUM_1.format(sum_of_el = list_sum_of_all_elements))
 
 # ------------------------------------------------------------------------------
