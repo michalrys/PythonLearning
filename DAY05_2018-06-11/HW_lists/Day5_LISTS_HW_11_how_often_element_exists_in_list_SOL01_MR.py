@@ -27,10 +27,10 @@ def get_unique_list(list_user):
 MESSAGE_INPUT = 'Statystka elementów dla listy:\n{list_plot}'
 MESSAGE_OUTPUT = 'Element: {element}, ' \
                  'wystąpił {element_count} razy, co ' \
-                 'stanowi {element_stats:.0f} % elementów listy.'
+                 'stanowi {element_stats:.0f}% elementów listy.'
 
 # input list
-list_user = [1, 4, 6, 1, 45, 6, 6, 6, 4, 5, 9]
+list_user = [10,10,20,10,10,20,10,20,20,20,40,50,40,10,30,50,50,30]
 
 # main
 list_user_length = len(list_user)
