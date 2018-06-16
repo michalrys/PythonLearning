@@ -8,18 +8,40 @@
 # ------------------------------------------------------------------------------
 
 # functions
-def get_amount_of_element_in_list(element_to_find, list_input):
+def get_amount_of_element_in_list(element_to_find: object, list_input: object) -> int:
+    #TODO: make more complex
+    """Count occurrance of element in list.
+
+    :rtype: int
+    :param object element_to_find: Element to find.
+    :param list list_input: List of elements.
+    :return: Amount of element in list.
+    """
     amount_of_element_in_list = 0
     for element in list_input:
         if element == element_to_find:
             amount_of_element_in_list += 1
     return amount_of_element_in_list
 
-def get_percentage_of_element_occurance_in_list(amount_of_element, list_length):
+def get_percentage_of_element_occurance_in_list(amount_of_element: int,
+                                                list_length: int) -> int:
+    """Calculate % of element from element list.
+
+    :rtype: int
+    :param int amount_of_element: How many times specified element exist in list.
+    :param int list_length: Total amount of element which exist in list.
+    :return:
+    """
     element_occurance_in_perc = (amount_of_element / list_length) * 100
     return element_occurance_in_perc
 
-def get_unique_list(list_user):
+def get_unique_list(list_user: list) -> list:
+    """Delete duplicates from list.
+
+    :rtype: list
+    :param list list_user: List to work in.
+    :return: List with uniques elements.
+    """
     list_user_unique = list(set(list_user))
     return list_user_unique
 
