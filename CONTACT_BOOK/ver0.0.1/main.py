@@ -9,8 +9,6 @@ from lib.cb_constants import *
 from lib.cb_database import *
 from lib.cb_basic_functionality import *
 
-
-
 # main loop
 exit_program = 'No'
 print(MESSAGE_INTRO)
