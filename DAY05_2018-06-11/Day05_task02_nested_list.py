@@ -24,40 +24,40 @@ print('VII: ', zakupy_lipiec)
 # tutaj kopia jest płytka. nie działa - listy zakupy_czerwiec i zakupy_lipiec
 # będą takie same. nie o to nam chodziło.
 # zakupy_lipiec = zakupy_czerwiec.copy()
-# zakupy_lipiec[1].append('ogorek')
-# print(zakupy_czerwiec)
-# print(zakupy_lipiec)
-
-# kopia glęboka, przez copy.deepcopy
-zakupy_lipiec = copy.deepcopy(zakupy_czerwiec)
 zakupy_lipiec[1].append('ogorek')
-print('')
-print('VI: po', zakupy_czerwiec)
-print('VII: po', zakupy_lipiec)
-
-print(dir())
-# copy --> shallow copy - kopia płytka. dobre dla typów prostych
-# dla typów złożonych --> deepcopy:
-# deep copy tworzy nowy obszar w pamięci, gdzie kopiuje dane
+print(zakupy_czerwiec)
+print(zakupy_lipiec)
 #
-# uważać na rozmowach kwal.
-
-print('--------------------')
-print('--------------------')
-# ------------------------------------------------------------------------------
-# jak przeliterować się po nested list
-for kategoria_zakupow in zakupy_lipiec:
-    for towar in kategoria_zakupow:
-        print(towar)
-    print()
-
-# test
-# odwolania do listy w liscie
-a[1:3]
-a[1:3][0]
-a[1:3][0][0]
-a[1][2]
-
-a[0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1]
-a[0][0]
+# # kopia glęboka, przez copy.deepcopy
+# zakupy_lipiec = copy.deepcopy(zakupy_czerwiec)
+# zakupy_lipiec[1].append('ogorek')
+# print('')
+# print('VI: po', zakupy_czerwiec)
+# print('VII: po', zakupy_lipiec)
+#
+# print(dir())
+# # copy --> shallow copy - kopia płytka. dobre dla typów prostych
+# # dla typów złożonych --> deepcopy:
+# # deep copy tworzy nowy obszar w pamięci, gdzie kopiuje dane
+# #
+# # uważać na rozmowach kwal.
+#
+# print('--------------------')
+# print('--------------------')
+# # ------------------------------------------------------------------------------
+# # jak przeliterować się po nested list
+# for kategoria_zakupow in zakupy_lipiec:
+#     for towar in kategoria_zakupow:
+#         print(towar)
+#     print()
+#
+# # test
+# # odwolania do listy w liscie
+# a[1:3]
+# a[1:3][0]
+# a[1:3][0][0]
+# a[1][2]
+#
+# a[0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1][0:1]
+# a[0][0]
 

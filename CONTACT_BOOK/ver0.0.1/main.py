@@ -9,7 +9,18 @@ from lib.cb_constants import *
 from lib.cb_database import *
 from lib.cb_basic_functionality import *
 
+from cb_basic_functionality import *
+
+# # TODO: gdy dodam tą linię poniżej, wtedy mam podpowiedzi pod ctrl+q
+# from cb_basic_functionality import *
+
+
+# import sys
+# print(sys.path)
+
 # main loop
+
+
 exit_program = 'No'
 print(MESSAGE_INTRO)
 
