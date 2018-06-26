@@ -28,7 +28,7 @@ def cb_print_list_2d(matrix: list) -> object:
     for row in matrix:
         print('|', sep=' ', end='')
         for element in row:
-            print( ' ', element, ' ', sep='', end='')
+            print(' ', element, ' ', sep='', end='')
         print('|', sep=' ', end='\n')
 
 def cb_get_char_from_user() -> str:
