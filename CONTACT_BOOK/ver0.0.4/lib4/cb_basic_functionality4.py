@@ -161,7 +161,7 @@ def cb_add_menu_print_what_to_do(message_separator, message_ask_what_to_do, db_k
     print('Aby cofnąć się do menu głównego wpisz: back')
     print('Aby zapisać i wrócić do menu głównego wpisz: done')
 
-def cb_add_menu_execute_choosen_option(db_new_entry, add_menu_option):
+def cb_add_menu_execute_chosen_option(db_new_entry, add_menu_option):
     """Execute option in add menu"""
     # input: add_menu_option, db_new_entry
     # output: db_new_entry

@@ -59,7 +59,7 @@ while run_program:
 
             # execute option
             add_menu_result_of_chosen_option = \
-                cb_add_menu_execute_choosen_option(db_new_entry,
+                cb_add_menu_execute_chosen_option(db_new_entry,
                                                    add_menu_option)
 
             db_new_entry.update(add_menu_result_of_chosen_option[0])
