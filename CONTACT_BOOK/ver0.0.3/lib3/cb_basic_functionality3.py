@@ -21,6 +21,9 @@ class FileDataBaseWithSingleRowError(Exception):
 class ErrorWrongNumberError(Exception):
     pass
 
+class ErrorEmptyDatabaseToWrite(Exception):
+    pass
+
 # ------------------------------------------------------------------------------
 def cb_get_char_from_user() -> str:
     """Get single char from user via standard input.
@@ -92,6 +95,12 @@ def db_data_read(db_file):
 def db_data_write(db_whole_as_dict, db_file):
     """Write whole database as list of dicts to csv file"""
     import csv
+
+    # check if database is empty
+    # TODO: add check if there is none or single data
+    if len(db_whole_as_dict) == 0:
+        raise ErrorEmptyDatabaseToWrite
+        return []
 
     key_list = []
     for key in db_whole_as_dict[0]:

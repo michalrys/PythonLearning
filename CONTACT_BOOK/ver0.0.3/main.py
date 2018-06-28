@@ -9,12 +9,9 @@
 #   0.0.1 : preliminary work
 # ------------------------------------------------------------------------------
 import copy
-from time import gmtime, strftime
+from time import gmtime, strftime #TODO: popraw to -> znacznik przy nowym wpisie
 from lib3.cb_constants3 import *
 from lib3.cb_basic_functionality3 import *
-
-from cb_constants3 import *
-from cb_basic_functionality3 import *
 
 # TODO: check working ctrl+q
 
@@ -150,7 +147,10 @@ while exit_program == 'No':
         exit_program = 'Yes'
 
         # write all entries to database: db_whole_as_dict --> file.csv
-        db_data_write(db_whole_as_dict, DB_FILE_01)
+        try:
+            db_data_write(db_whole_as_dict, DB_FILE_01)
+        except ErrorEmptyDatabaseToWrite:
+            print('Baza danych jest pusta. Nic nie zapisuję. Wychodzę z programu.')
 
     # OPTION not decimal -------------------------------------------------------
     elif not option_choosen.isdecimal():
