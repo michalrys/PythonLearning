@@ -1,5 +1,5 @@
 # Project: cotanct book
-# Date: 2018-06-28
+# Creation date: 2018-06-28
 # Version: 0.0.4
 # Author: Michał Ryś
 # Description: Here is contact book database
@@ -82,6 +82,27 @@ CB_ADD_MENU_OPTIONS[DB_KEYS[12]] = 'Dodaj nazwę miasta'
 CB_ADD_MENU_OPTIONS[DB_KEYS[13]] = 'Dodaj kod miasta'
 CB_ADD_MENU_OPTIONS[DB_KEYS[14]] = 'Dodaj nazwę państwa'
 CB_ADD_MENU_OPTIONS[DB_KEYS[15]] = 'Dodaj extra opis'
+
+# search menu: options to choose
+CB_MODIFY_MENU_OPTIONS = {}
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[0]] = 'Modyfikuj aktualny czas utworzenia'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[1]] = 'Modyfikuj pierwsze imię'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[2]] = 'Modyfikuj drugie imię'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[3]] = 'Modyfikuj nazwisko'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[4]] = 'Modyfikuj numer komórki'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[5]] = 'Modyfikuj numer telefonu prywatnego'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[6]] = 'Modyfikuj numer służbowy'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[7]] = 'Modyfikuj e-mail prywatny'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[8]] = 'Modyfikuj e-mail służbowy'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[9]] = 'Modyfikuj nazwę ulicy'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[10]] = 'Modyfikuj numer ulicy'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[11]] = 'Modyfikuj numer mieszkania'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[12]] = 'Modyfikuj nazwę miasta'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[13]] = 'Modyfikuj kod miasta'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[14]] = 'Modyfikuj nazwę państwa'
+CB_MODIFY_MENU_OPTIONS[DB_KEYS[15]] = 'Modyfikuj extra opis'
+
+
 
 # search menu: options to choose
 CB_SEARCH_MENU_OPTIONS = {}

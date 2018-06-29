@@ -1,5 +1,5 @@
 # Project: cotanct book
-# Date: 2018-06-28
+# Creation date: 2018-06-28
 # Version: 0.0.4
 # Author: Michał Ryś
 # Description: This is main function to run.
@@ -59,8 +59,7 @@ while run_program:
 
             # execute option
             add_menu_result_of_chosen_option = \
-                cb_add_menu_execute_chosen_option(db_new_entry,
-                                                   add_menu_option)
+                cb_add_menu_execute_chosen_option(db_new_entry, add_menu_option)
 
             db_new_entry.update(add_menu_result_of_chosen_option[0])
             add_menu_option = add_menu_result_of_chosen_option[1]
@@ -77,14 +76,80 @@ while run_program:
     # OPTION 2 -----------------------------------------------------------------
     elif int(option_choosen) == CB_OPTIONS_KEY[2]:
         # modify entry
-        pass
-        # 1. wybierz wpis -> przez id / imie / nazwisko
-        # 2. wyświetl te wpisy
-        # 3. wybierz któryś z nich do edycji
-        # 4. zrób to co w add menu - tylko bez deepcopy
+        # TODO: simplify -> use functions, try to merge add/modify?
+        print(MESSAGE_SEPARATOR)
+        print('Wybierz wpis poprzez podanie: imienia / nazwiska / id wpisu:')
 
-        #
-        #
+        # input from user - some data
+        data_to_search = cb_get_string_from_user('szukaj')
+
+        # search data_to_search in name_first, name_last, date_of_creation
+        db_whole_as_dict_entry_locations = []
+        db_whole_as_dict_entry_locations += get_entries_from_db(
+                                 db_whole_as_dict, 'name_first', data_to_search)
+        db_whole_as_dict_entry_locations += get_entries_from_db(
+                                  db_whole_as_dict, 'name_last', data_to_search)
+        db_whole_as_dict_entry_locations += get_entries_from_db(
+                           db_whole_as_dict, 'date_of_creation', data_to_search)
+
+        # make result list filled with unique locations
+        db_whole_as_dict_entry_locations = \
+            list(set(db_whole_as_dict_entry_locations))
+
+        # print entries -> choose one to modify -> modify -> write | else: end
+        if db_whole_as_dict_entry_locations:
+            # print what was found
+            option_to_choose = []
+            print('Znaleziono:')
+            for idx, location in enumerate(db_whole_as_dict_entry_locations, 1):
+                option_to_choose.append(idx)
+                print(f'Wybierz [{idx}] dla wpisu -> ', sep='', end='')
+                print(f'{db_whole_as_dict[location]}')
+
+            # ask to choose option - which entry should be modify:
+            print(MESSAGE_SEPARATOR)
+            while True:
+                option_chosen = cb_get_string_from_user('Wybieram opcję')
+                try:
+                    option_chosen = int(option_chosen)
+                except ValueError:
+                    print(f'Zła opcja. Wybierz jedną z {option_chosen}.')
+                else:
+                    if option_chosen in option_to_choose:
+                        location_to_modify = option_chosen - 1
+                        break
+                print(f'Zła opcja. Wybierz jedną z {option_chosen}.')
+
+            # modify chosen option -> works like add_menu
+            db_entry_to_modify = db_whole_as_dict[location_to_modify]
+            modify_menu_option = ''
+
+            while not modify_menu_option == 'back':
+                cb_modify_menu_print_what_to_do(MESSAGE_SEPARATOR,
+                                                MESSAGE_ASK_WHAT_TO_DO,
+                                                DB_KEYS,
+                                                CB_MODIFY_MENU_OPTIONS)
+                # read input string from user
+                modify_menu_option = cb_get_char_from_user()
+
+                # execute option
+                modify_menu_result_of_chosen_option = \
+                    cb_modify_menu_execute_chosen_option(db_entry_to_modify,
+                                                         modify_menu_option)
+                # update entry & get user option
+                db_entry_to_modify.update(modify_menu_result_of_chosen_option[0])
+                modify_menu_option = modify_menu_result_of_chosen_option[1]
+
+                # check user option: done = write to db | delete = delete entry
+                if modify_menu_option == 'done':
+                    print('Wpis został zmodyfikowany w bazie.')
+                    modify_menu_option = 'back'
+                elif modify_menu_option == 'delete':
+                    del db_whole_as_dict[location_to_modify]
+                    modify_menu_option = 'back'
+        # no data was found in database
+        else:
+            print(f'Nie znaleziono słowa {data_to_search} w książce adresowej.')
 
     # OPTION 3 -----------------------------------------------------------------
     elif int(option_choosen) == CB_OPTIONS_KEY[3]:

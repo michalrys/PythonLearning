@@ -1,5 +1,5 @@
 # Project: cotanct book
-# Date: 2018-06-28
+# Creation date: 2018-06-28
 # Version: 0.0.4
 # Author: Michał Ryś
 # Description: Here are main functions for realise the general ideas of project.
@@ -161,6 +161,7 @@ def cb_add_menu_print_what_to_do(message_separator, message_ask_what_to_do, db_k
     print('Aby cofnąć się do menu głównego wpisz: back')
     print('Aby zapisać i wrócić do menu głównego wpisz: done')
 
+
 def cb_add_menu_execute_chosen_option(db_new_entry, add_menu_option):
     """Execute option in add menu"""
     # input: add_menu_option, db_new_entry
@@ -217,6 +218,88 @@ def cb_add_menu_execute_chosen_option(db_new_entry, add_menu_option):
 
     return (db_new_entry, add_menu_option)
 
+# menu modify ------------------------------------------------------------------
+def cb_modify_menu_print_what_to_do(message_separator, message_ask_what_to_do, db_keys, menu_options):
+    """Prints what to do in menu modify"""
+    # input
+    # MESSAGE_SEPARATOR, MESSAGE_ASK_WHAT_TO_DO, DB_KEYS, CB_ADD_MENU_OPTIONS,
+
+    print(message_separator)
+    # print options to choose
+    print(message_ask_what_to_do)
+
+    for db_key in db_keys:
+        temp_len = len(menu_options[db_key])
+        temp_len_must_be = 35
+        temp_len_arrow = temp_len_must_be - temp_len
+        print(f'{menu_options[db_key]}', sep='', end='')
+        print(' ', temp_len_arrow * '-', '> ', sep='', end='')
+        print(f'{db_key}', sep='', end='\n')
+    print('Aby wypełnić wszystko po kolei: all')
+    print('Aby usunąć wpis: delete')
+    print('Aby cofnąć się do menu głównego wpisz: back')
+    print('Aby zapisać i wrócić do menu głównego wpisz: done')
+
+
+def cb_modify_menu_execute_chosen_option(db_entry_to_modify, modify_menu_option):
+    """Execute option in add menu"""
+    # input: modify_menu_option, db_new_entry
+    # output: db_entry_to_modify
+
+    if modify_menu_option == 'date_of_creation':
+        print('Zmodyfikowano datę utworzenia wpisu na aktualną datę.')
+        time_current = strftime("%Y-%m-%d--%H-%M-%S", gmtime())
+        db_entry_to_modify['date_of_creation'] = time_current
+
+    elif modify_menu_option == 'name_first':
+        try:
+            name_input = get_name_user('Pierwsze imię to')
+        except WrongNameIsNotAlphaError:
+            print(f'Podane imię ma niedozwolone znaki.')
+        else:
+            db_entry_to_modify['name_first'] = name_input
+            print('[info]: OK, zmodyfikowano.')
+
+    elif modify_menu_option == 'name_second':
+        name_input = get_name_user('Drugie imię to')
+        db_entry_to_modify['name_second'] = name_input
+        print('[info]: OK, zmodyfikowano.')
+
+    elif modify_menu_option == 'name_last':
+        name_input = get_name_user('Nazwisko to')
+        db_entry_to_modify['name_last'] = name_input
+        print('[info]: OK, zmodyfikowano.')
+
+    elif modify_menu_option == 'phone_mobile':
+        number_input = get_number_user('Numer komórki to')
+        db_entry_to_modify['phone_mobile'] = number_input
+        print('[info]: OK, zmodyfikowano.')
+
+    elif modify_menu_option == 'phone_private':
+        number_input = get_number_user('Numer prywatny telefonu to')
+        db_entry_to_modify['phone_mobile'] = number_input
+        print('[info]: OK, zmodyfikowano.')
+
+    elif modify_menu_option == 'all':
+        print('Modyfikuje wszystko pokolei. Do zrobienia potem.')
+
+        # ...
+
+    elif modify_menu_option == 'delete':
+        print('Usuwam wpis.')
+
+    elif modify_menu_option == 'back':
+        print('Cofa się do menu głównego i nic nie robi')
+
+    elif modify_menu_option == 'done':
+        print('W bazie poprawiono wpis do następującej postaci:')
+        print(db_entry_to_modify)
+
+
+    else:
+        print(f'Wybrana opcja: {modify_menu_option} jest nieprawidłowa.')
+
+    return (db_entry_to_modify, modify_menu_option)
 
 
 # menu search ------------------------------------------------------------------
@@ -299,7 +382,8 @@ def cb_search_menu_execute_choosen_option(search_menu_option):
 
 
 def get_entries_from_db(db_whole_as_dict, data_type, data_value):
-    """Get entries from db which contain data_value. Return list of dicts"""
+    """Get entries from db which contain data_value. Return locations of dicts
+    in main list"""
 
     if data_type == None:
         return []
