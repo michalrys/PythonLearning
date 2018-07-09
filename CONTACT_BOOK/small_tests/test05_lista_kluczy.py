@@ -1,0 +1,1 @@
+# zapis do pliku
