@@ -16,7 +16,7 @@ foto = Image.open(file)
 
 # foto.show()
 print(f'{foto.width} x {foto.height}')
-print(foto.getpixel((100,100)))
+print(foto.getpixel((100, 100)))
 
 foto.effect_spread(10).show()
 
